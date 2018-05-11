@@ -4,7 +4,7 @@ title: "Devoxx Talk - Optimizing Java"
 date: 2018-05-11
 ---
 
-[Slides]((/assets/slide-decks/optimizing-java.pdf))   
+[Slides](/assets/slide-decks/optimizing-java.pdf)  
 Video - Coming Soon
 
 #### Introduction
