@@ -14,8 +14,8 @@ Low level concerns such as memory management, machine architecture and operating
 addressed by the JVM. 
 To do this effectively Java has a very complicated runtime environment, which most Java developers don't need to understand.
 However when performance or production problems are encountered it is useful to have some background knowledge.
-If the developer is working on high performance Java and considering [Mechanical Sympathy](https://mechanical-sympathy.blogspot.co.uk) 
-should be familiar with these topics. 
+If the developer is working on high performance Java and considering [Mechanical Sympathy](https://dzone.com/articles/mechanical-sympathy) 
+they should be familiar with these topics. 
 
 This post is an accompanying overview of the Devoxx talk, which will share some links and a brief overview of each explored subsystem. 
 For more detail please watch the video and for even more detail please take a look at 
@@ -45,7 +45,7 @@ Interestingly a `HelloWorld` class [does already exist](http://grepcode.com/file
 
 #### Class Files
 
-One common misconceptions that developers can have is that `javac` is where optimization occurs. 
+A common misconceptions that developers can have is that `javac` is where optimization occurs. 
 In fact this could not be further from the truth.
 `javac` intentionally does not do heavy optimizations, it takes java code and converts it to simple bytecode. 
 Java is converted into bytecode, which will be executed in an interpreted manor.
@@ -121,7 +121,8 @@ This is quite interesting, as it is an implementation detail that changed as of 
       12: return
 ```
 The `StringBuilder` usage has been replaced and now uses the magic of `invokedyanmic`, which indicates a function call
-that will be determined at runtime to `makeConcatWithConstants`.
+that will be determined at runtime to `makeConcatWithConstants`. 
+Looking at the JavaDoc for `makeConcatWithConstants` we can see the new way Strings are appended from Java 9:
 
 > Facilitates the creation of optimized String concatenation methods, that can be used to efficiently concatenate a known number of arguments of known types, 
 possibly after type adaptation and partial evaluation of arguments.
@@ -129,14 +130,14 @@ possibly after type adaptation and partial evaluation of arguments.
 #### Classloaders
 
 Once we have the bytecode in a `.class` file we need to load the class into the JVM. 
-This is the responsibility of the classloader, which by default will load the class form the CLASSPATH.
+This is the responsibility of the classloader, which by default will load the class from the [CLASSPATH](https://docs.oracle.com/javase/tutorial/essential/environment/paths.html).
 One thing to be aware of is that classes are by default loaded just as they are required by the JVM.
 That means if the CLASSPATH is incorrect due to build issues you will encounter a dreaded `ClassNotFoundException`.
 To demonstrate the dynamic nature of classloaders in the talk we used the [Watching Classloader](https://github.com/jpgough/watching-classloader).
 The Watching Classloader actually has several features to show the dynamic nature of Java:
 
 * It watches a directory for a `*.java` file, and receives a notification on a change in that directory.
-* It takes the .java file and using `javax.tools.JavaCompiler` to compile the .java file to a .class file on the fly
+* It takes the .java file and uses `javax.tools.JavaCompiler` to compile the .java file to a .class file on the fly
 * After compilation is successful the class will be loaded into the JVM
 * Using the simple REPL and typing the class name you can now see the class has been loaded 
 
@@ -145,6 +146,9 @@ The Watching Classloader actually has several features to show the dynamic natur
 All programs initially run in interpreted mode, if we run our `HelloWorld` class we can start to see some of the effects
 of interpreting, compiling upfront and running in tiered compilation mode. 
 One thing to note is this is quite a bias test, but does help to show the kind of speedup the JVM is capable of. 
+The reason for the bias is we don't ever see if the benefits of the upfront compilation would pay back. 
+It is also incredibly difficult to get meaningful microbenchmarks for JIT, because you need to see the method in the 
+context of the running application. 
 
 ```bash
 $ ./timings.sh 
@@ -256,7 +260,7 @@ This was not because code got faster or it changed GC, but it did allow pressure
 Escape analysis is triggered when a variable does not leak from a particular stack frame.
 If this can be guaranteed, and the object size is not too big, then it can be allocated on the stack itself.
 Allocating on the stack prevents the object from going to the heap and quickly dying. 
-The life time of objects is often explained by the _weak generational hypothesis_, which describes many objects as only
+The life time of objects is often explained by the [_weak generational hypothesis_](https://openscholarship.wustl.edu/eng_etds/169/), which describes many objects as only
 living for a short amount of time. 
 
 ##### Loop Unrolling
@@ -264,8 +268,8 @@ living for a short amount of time.
 Loops include an additional cost in terms of both the iteration itself and the CPU having to account for back branches in
 with the prediction cost. 
 Loop unrolling works by removing the loop and laying out the instructions sequentially. 
-The JVM is capable of doing this on some fairly complex loops, in a conversation with [Chris Newland](https://www.chrisnewland.com) 
-he once mentioned to me that he had seen a ray tracing algorithm get loop unrolled!
+The JVM is capable of doing this on some fairly complex loops. In a conversation with [Chris Newland](https://www.chrisnewland.com) 
+he once mentioned to me that he had seen a [ray tracing algorithm](https://en.wikipedia.org/wiki/Ray_tracing_(graphics)) get loop unrolled!
 
 ##### Monomorphic Dispatch
 
