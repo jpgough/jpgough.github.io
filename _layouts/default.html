@@ -35,10 +35,23 @@
         <h1 id="project_title">{{ site.title }}</h1>
         <h2 id="project_tagline">{{ site.description }}</h2>
         <nav class="primary-nav" id="nav">
+
             {% if page.url != '/' %}
             <a href="{{ site.baseurl }}/" class="btn">About</a>
             {% else %}
             <span class="btn btn--active">About</span>
+            {% endif %}
+
+            {% if page.url != '/blog' %}
+            <a href="{{ site.baseurl }}/blog" class="btn">Articles</a>
+            {% else %}
+            <span class="btn btn--active">Articles</span>
+            {% endif %}
+
+            {% if page.url != '/talks' %}
+            <a href="{{ site.baseurl }}/talks" class="btn">Talks</a>
+            {% else %}
+            <span class="btn btn--active">Talks</span>
             {% endif %}
 
         </nav>
