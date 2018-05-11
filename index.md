@@ -1,37 +1,12 @@
-## Welcome to GitHub Pages
+## Welcome 
 
-You can use the [editor on GitHub](https://github.com/jpgough/jpgough.github.io/edit/master/index.md) to maintain and preview the content for your website in Markdown files.
+I am a Java developer, architect and author. 
+I first became interested in Java during my degree in Computer Science at the University of Warwick, 
+and after graduating I became a member of the London Java Community. 
+Community has remained central to my contributions, which include working on the design and testing of JSR-310 and 
+serving on the Java Community Process Executive Committee for several years. 
+I am a regular conference speaker and currently focus on building customer facing technology at Morgan Stanley. 
+I spent four years teaching Java and C++ in various countries around the world.
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
 
-### Markdown
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
-
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
-```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/jpgough/jpgough.github.io/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
