@@ -45,7 +45,7 @@ Interestingly a `HelloWorld` class [does already exist](http://grepcode.com/file
 
 #### Class Files
 
-A common misconceptions that developers can have is that `javac` is where optimization occurs. 
+A common misconception that developers can have is that `javac` is where optimization occurs. 
 In fact this could not be further from the truth.
 `javac` intentionally does not do heavy optimizations, it takes java code and converts it to simple bytecode. 
 Java is converted into bytecode, which will be executed in an interpreted manor.
