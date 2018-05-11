@@ -12,10 +12,12 @@ Video - Coming Soon
 One of the biggest success stories of Java has been to abstract the low level complexities of programming. 
 Low level concerns such as memory management, machine architecture and operating system compatibility are all 
 addressed by the JVM. 
-To do this Java has a very complicated runtime environment, which most Java developers don't need to understand.
+To do this effectively Java has a very complicated runtime environment, which most Java developers don't need to understand.
 However when performance or production problems are encountered it is useful to have some background knowledge.
+If the developer is working on high performance Java and considering [Mechanical Sympathy](https://mechanical-sympathy.blogspot.co.uk) 
+should be familiar with these topics. 
 
-This post is an overview of the talk, which will share some links and a brief overview of each subsystem. 
+This post is an accompanying overview of the Devoxx talk, which will share some links and a brief overview of each explored subsystem. 
 For more detail please watch the video and for even more detail please take a look at 
 [the book](http://shop.oreilly.com/product/0636920042983.do) 😊. 
 
@@ -39,9 +41,11 @@ public class HelloWorld {
 }
 ```
 
+Interestingly a `HelloWorld` class [does already exist](http://grepcode.com/file/repository.grepcode.com/java/root/jdk/openjdk/6-b14/sun/jvm/hotspot/HelloWorld.java) in the JVM...
+
 #### Class Files
 
-One common misconception that developers can have is that `javac` is where optimization occurs. 
+One common misconceptions that developers can have is that `javac` is where optimization occurs. 
 In fact this could not be further from the truth.
 `javac` intentionally does not do heavy optimizations, it takes java code and converts it to simple bytecode. 
 Java is converted into bytecode, which will be executed in an interpreted manor.
@@ -124,12 +128,12 @@ possibly after type adaptation and partial evaluation of arguments.
 
 #### Classloaders
 
-Once we have the bytecode in a `.class` file we need to load that into the JVM. 
+Once we have the bytecode in a `.class` file we need to load the class into the JVM. 
 This is the responsibility of the classloader, which by default will load the class form the CLASSPATH.
 One thing to be aware of is that classes are by default loaded just as they are required by the JVM.
 That means if the CLASSPATH is incorrect due to build issues you will encounter a dreaded `ClassNotFoundException`.
 To demonstrate the dynamic nature of classloaders in the talk we used the [Watching Classloader](https://github.com/jpgough/watching-classloader).
-The Watching Classloader actually has several features to show the dynamic nature of Java
+The Watching Classloader actually has several features to show the dynamic nature of Java:
 
 * It watches a directory for a `*.java` file, and receives a notification on a change in that directory.
 * It takes the .java file and using `javax.tools.JavaCompiler` to compile the .java file to a .class file on the fly
@@ -138,7 +142,7 @@ The Watching Classloader actually has several features to show the dynamic natur
 
 #### Interpreting
 
-All programs initially run in interpreted mode, if we run our HelloWorld class we can start to see some of the effects
+All programs initially run in interpreted mode, if we run our `HelloWorld` class we can start to see some of the effects
 of interpreting, compiling upfront and running in tiered compilation mode. 
 One thing to note is this is quite a bias test, but does help to show the kind of speedup the JVM is capable of. 
 
@@ -177,6 +181,7 @@ When the JVM hits a configurable threshold a method is determined to be hot.
 During the profiling mode a trace has been kept of the calls and the paths of the calls through the code.
 The heuristics that are gathered from the profile allow the JVM to make more appropriate optimizations that are tailored 
 to that specific run on the application. 
+
 A compiled method is placed into the code cache, some pointer twizzling occurs which then allows the native instructions
 to be used instead of interpreting.
 Many of these optimizations are monitored after they have been applied by the JVM.
@@ -240,8 +245,9 @@ Register allocation will yield a speed up in the memory access times of key vari
 
 ##### Loop-Invariant Code Motion 
 
-If a variable positioned inside the loop, and has no outcome or changes as a result the actual iteration, it can be optimized.
-This optimization often involves hoisting the variable outside of the loop and can be cached in a register.  
+If a variable is positioned inside the loop, and has no outcome or changes as a result the actual iteration, it can be optimized.
+This optimization often involves hoisting the variable outside of the loop, there is also then the opportunity to cache 
+the value in a register. 
 
 ##### Escape Analysis
 
@@ -255,10 +261,35 @@ living for a short amount of time.
 
 ##### Loop Unrolling
 
-
-
+Loops include an additional cost in terms of both the iteration itself and the CPU having to account for back branches in
+with the prediction cost. 
+Loop unrolling works by removing the loop and laying out the instructions sequentially. 
+The JVM is capable of doing this on some fairly complex loops, in a conversation with [Chris Newland](https://www.chrisnewland.com) 
+he once mentioned to me that he had seen a ray tracing algorithm get loop unrolled!
 
 ##### Monomorphic Dispatch
 
+Java is an inheritance heavy language, and although there are multiple implementations of interfaces in the same runtime 
+it is usually the case that only one type is used. 
+If only one type is used then it is possible to make an optimization to the way that method is invoked. 
+All methods in Java are invoked dynamically (rather than statically, which is possible in C++).
+This means that a v-table is used to look up the actual function through the class hierarchy. 
+If the JVM can reason that it is only ever possible to dispatch to one type an optimization can be made to flatten 
+the call into a single lookup, without traversing the table. 
+This optimization can be done optimistically, as we discussed earlier class loading can invalidate monomorphic dispatch.
+However the classloader has some built in magic to backout this optimization. 
+
 #### JIT Watch
 
+[JIT Watch](https://github.com/AdoptOpenJDK/jitwatch) is an open source tool that is made available via the Adopt Open JDK program. 
+The thing I really like about JIT Watch is the author [Chris Newland](https://www.chrisnewland.com) wrote the tool to understand 
+how the JIT was working as a pet project.
+Now the tool is the industry standard for looking at JIT compilation logs.
+
+Most of the commands that were used in the talk can be found in JIT Watch in a nicely represented format. 
+For instance method inlining can be displayed nicely as the inline chain, indicating what was compiled and what was inlined
+
+![JIT Watch](/assets/images/blog/jit-watch.png)
+
+There are lots of other views that you can see in JIT Watch and you can also feed it a production log.
+A full guide to the above optimizations and the use of JIT Watch can be found in our book [Optimizing Java](http://shop.oreilly.com/product/0636920042983.do).  
