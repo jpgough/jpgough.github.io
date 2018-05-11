@@ -1,4 +1,3 @@
-
 ## 2018
 
 ### Devoxx UK
@@ -6,6 +5,7 @@
 
 At Devoxx UK I gave a presentation on Optimizing Java and a brief tour of how the JVM works. 
 This was similar to the talk given at the LJC in 2017.
+The slides can be found [here](/assets/slide-decks/optimizing-java.pdf) and an accompanying blog post can be found [here](/blog/2018/05/11/optimizing-java).
 
 
 ### Docklands LJC
