@@ -19,6 +19,12 @@
   cursor:pointer;
   font: bold 0.75rem sans-serif;
 }
+
+.btn-active {
+  border: .094em solid #00BFFF;
+  background-color: #0000CD;
+}
+
 .btn:hover {
   background-color: #8A58B7;
   box-shadow: 0 .125em rgba(0,0,0,.4),

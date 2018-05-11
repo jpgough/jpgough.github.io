@@ -39,19 +39,19 @@
             {% if page.url != '/' %}
             <a href="{{ site.baseurl }}/" class="btn">About</a>
             {% else %}
-            <span class="btn btn--active">About</span>
+            <span class="btn btn-active">About</span>
             {% endif %}
 
-            {% if page.url != '/blog' %}
+            {% if page.url != '/blog/' %}
             <a href="{{ site.baseurl }}/blog" class="btn">Articles</a>
             {% else %}
-            <span class="btn btn--active">Articles</span>
+            <span class="btn btn-active">Articles</span>
             {% endif %}
 
             {% if page.url != '/talks' %}
             <a href="{{ site.baseurl }}/talks" class="btn">Talks</a>
             {% else %}
-            <span class="btn btn--active">Talks</span>
+            <span class="btn btn-active">Talks</span>
             {% endif %}
 
         </nav>
