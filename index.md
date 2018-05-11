@@ -14,5 +14,3 @@ read on [Safari Books](https://www.safaribooksonline.com/library/view/optimizing
 or [Amazon](https://www.amazon.com/Optimizing-Java-Techniques-Application-Performance/dp/1492025798/ref=sr_1_1?ie=UTF8&qid=1526027489&sr=8-1&keywords=optimizing+java).
 
 <img src="assets/images/optimizing-cover.jpg" width="250" height="300">
-
-I currently work on developing client facing technology at Morgan Stanley.
