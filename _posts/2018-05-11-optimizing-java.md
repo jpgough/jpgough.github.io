@@ -21,7 +21,7 @@ This post is an accompanying overview of the Devoxx talk, which will share some 
 For more detail please watch the video and for even more detail please take a look at 
 [the book](http://shop.oreilly.com/product/0636920042983.do) 😊. 
 
-![Performance Landscape](/assets/images/blog/performance-landscape.png) 
+![Performance Landscape](/assets/images/blog/oj/performance-landscape.png) 
 
 #### Example Program
 
@@ -293,7 +293,7 @@ Now the tool is the industry standard for looking at JIT compilation logs.
 Most of the commands that were used in the talk can be found in JIT Watch in a nicely represented format. 
 For instance method inlining can be displayed nicely as the inline chain, indicating what was compiled and what was inlined
 
-![JIT Watch](/assets/images/blog/jit-watch.png)
+![JIT Watch](/assets/images/blog/oj/jit-watch.png)
 
 There are lots of other views that you can see in JIT Watch and you can also feed it a production log.
 A full guide to the above optimizations and the use of JIT Watch can be found in our book [Optimizing Java](http://shop.oreilly.com/product/0636920042983.do).  
