@@ -30,7 +30,7 @@ I haven't tried it on an older device, but it seems fine on the Air 2
 * [Download Swift Playgrounds](https://itunes.apple.com/gb/app/swift-playgrounds/id908519492?mt=8) from the Apple App Store
 * Download Learn to Code 1 as an in App download form the Swift Playgrounds app
 
-![Swift Playgrounds Shop](/assets/images/blog/install-playgrounds.png)
+![Swift Playgrounds Shop](/assets/images/blog/playgrounds/install-playgrounds.png)
 
 ### Preparation 
 
@@ -58,7 +58,7 @@ They'll struggle later if this isn't done right from the beginning as the proble
 * Let them hold the iPad and control the pressing. 
 You might want to have a small session where you show them first, but they will get more from being the one pressing the buttons.
 
-![Swift Playgrounds Shop](/assets/images/blog/finding-bugs.png)
+![Swift Playgrounds Shop](/assets/images/blog/playgrounds/finding-bugs.png)
 
 
 The screen has a description and extra instructions of what needs to be done. The code is the list of instructions at the bottom left. Run my code/stop is at the bottom of the screen. 
