@@ -1,5 +1,30 @@
 ## 2018
 
+### O'Reilly Software Architecture Conference
+#### Building APIs with microservices: Things I wish I’d known
+
+Moving from a traditional monolithic architecture to microservices can be a serious challenge even before adding an API program on top of this, along with a culture shifting toward a more Agile way of working.
+
+Jim Gough walks you through an introduction to understanding the rapidly changing world of APIs with microservices, including key technologies and patterns, approaches to API management, and instigating a culture change. 
+The talk will be a balance between short snappy live code examples and slides for discussion points. 
+There’s a lot to explore, so expect ideas to come thick and fast tying together to build an overview of this exciting technology space.
+
+Topics include:
+
+* Building a microservice using Docker and Spring Boot
+* The sidecar pattern: A balance between libraries and services
+* Why use an API gateway?
+* Scheduling and running containers
+* API gateways and Kubernetes
+* Moving to a service mesh
+* Managing API versioning
+* Testing and validating API compatibility
+* Developing an API in an Agile way across multiple teams
+* Continuous deployment
+
+The slides for this talk can be found [here](assets/slide-decks/api-microservices.pdf).
+Videos of the demonstrations will be available soon.
+
 ### Devoxx UK
 #### Optimizing Java: A brief tour of the JVM
 
