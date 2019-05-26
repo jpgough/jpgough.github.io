@@ -5,7 +5,7 @@ date: 2019-05-26
 ---
 
 Inspired by [this podcast series](https://martinfowler.com/articles/is-tdd-dead/) the purpose of this session was to discuss experiences with TDD and testing. 
-The format of this post is mostly notes around the conversation that was had, apologies if I have missed anything.
+The format of this post is mostly notes around the conversation, apologies if I have missed anything.
 Happy to take a PR for any corrections/additions or contact me direct. 
 Please feel free to add any thoughts on [Twitter #jalbaTDD](https://twitter.com/hashtag/jalbaTDD?lang=en). 
 
