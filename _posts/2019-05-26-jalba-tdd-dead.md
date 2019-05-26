@@ -32,7 +32,7 @@ It was noted that the use of PowerMock may highlight a code smell, and should be
 That said when testing legacy code PowerMock can enable tests on what otherwise could be really tricky. 
 Many of the developers have used mocking and PowerMock when testing legacy code. 
 
-#### How many tests are enough?
+#### How Many Tests are Enough?
 
 Another topic of conversation that came up is the extremely high number of tests that some teams have ended up with.
 In projects where there are a high number of tests the point was raised about this raising the amount of time take for the feedback loop to complete.
@@ -64,7 +64,7 @@ The conversation came full circle almost back to the discussion about code cover
 A test that is not quality can actually be quite dangerous, luring developers into a false sense of security that things are working fine because the tests pass. 
 One such example was developers encountering situations where a function simply asserts true. 
 
-#### A more extreme approach
+#### A more Extreme Approach
 
 A more extreme form of testing is the Gitmo tool, that automatically deletes code that does not have a test. 
 This is an interesting mechanism of policing the codebase for quality and ensuring nothing gets through without a test.
