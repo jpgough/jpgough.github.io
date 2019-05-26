@@ -64,7 +64,7 @@ The conversation came full circle almost back to the discussion about code cover
 A test that is not quality can actually be quite dangerous, luring developers into a false sense of security that things are working fine because the tests pass. 
 One such example was developers encountering situations where a function simply asserts true. 
 
-#### A more Extreme Approach
+#### A More Extreme Approach
 
 A more extreme form of testing is the Gitmo tool, that automatically deletes code that does not have a test. 
 This is an interesting mechanism of policing the codebase for quality and ensuring nothing gets through without a test.
