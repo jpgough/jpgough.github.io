@@ -49,7 +49,7 @@ In the examples presented both had been developers on a team with a motivation t
 In one example it had lead to the developer becoming a full time advocate, as his company and team did not see the value.
 In the other situation it lead to the developer becoming a full time technical trainer for several years. 
 
-One question that was raised is now advocates are more familiar roles can you become one without any programming experience? 
+One question raised is now advocates are more familiar roles can you become one without any programming experience? 
 It was generally felt that this would be really tricky and would probably represent more of a sales role. 
 
 One advantage of becoming an advocate is building your own brand as an expert in a particular field. 
@@ -87,5 +87,6 @@ In a non paid or community style advocacy the community becomes somewhat self ad
 * Advocacy has historically happened _by accident_, it will be interesting to see if this continues now more roles are available.
 There will always be _advocates by accident_ or a _drive by advocate_.
 * If your internal community is big enough having an internal advocates program could be an advantage.
+* Maintain your own personal/open source backlog, keep an eye on what you want to do. 
 * Advocacy and advocacy types of activity take time, this has often lead to developers leaving their current role to become advocates.
 Support and understanding from management can help retain and foster a team of technical excellence in different fields. 
