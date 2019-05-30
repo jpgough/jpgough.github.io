@@ -27,6 +27,7 @@ There's also a baseline of advocacy for Java itself happening at a user group ne
 
 Community engagement is a core attribute required of advocates. 
 Though it is interesting that the community is also somewhat self advocating through their members. 
+[Simon Maple](https://twitter.com/sjmaple) is an example of someone who has consistently put the [London Java Community](https://twitter.com/ljcjug) on the global JUG map. 
 
 #### Internal vs External Advocate
 
