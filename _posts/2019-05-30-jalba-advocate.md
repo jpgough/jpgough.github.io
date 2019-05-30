@@ -6,6 +6,7 @@ date: 2019-05-30
 
 I proposed this sessions as I was interested to discuss the idea of developer advocates and how that relates to developers looking to move into that type of role.
 I was also interested in the difference between advocates that are paid/funded and someone who is advocate for their own brand/project's sake. 
+Please feel free to add any thoughts on [Twitter #jalbaAdvocacy](https://twitter.com/hashtag/jalbaAdvocacy?lang=en). 
 
 #### What is an Advocate?
 
