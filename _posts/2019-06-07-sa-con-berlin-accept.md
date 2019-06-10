@@ -10,7 +10,7 @@ The session will be on Building, Specifying and Testing APIs with Microservices.
 The conference takes place on the 4th - 7th November.
 I'll be presenting the workshop session with [Nick Ebbitt](https://twitter.com/nickebbitt) and [Matthew Auburn](https://twitter.com/Matty_a_nerd).
 
-###Building, Specifying and Testing APIs with Microservices
+### Building, Specifying and Testing APIs with Microservices
 
 #### Description
 
