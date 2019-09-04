@@ -1,3 +1,9 @@
+---
+layout: post
+title: "To Open Source or Not to Open Source"
+date: 2019-09-04
+---
+
 #To Open Source or Not to Open Source
 
 I've been accepted to speak at Devoxx BE, contrary to the advertising on the website you have to pay to present a quickie talk.
