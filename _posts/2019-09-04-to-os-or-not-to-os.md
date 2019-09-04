@@ -4,8 +4,6 @@ title: "To Open Source or Not to Open Source"
 date: 2019-09-04
 ---
 
-# To Open Source or Not to Open Source
-
 ## Introduction
 Devoxx Belgium or JavaPolis is a conference I've always wanted to attend.
 I remember listening to the Java Posse Podcast on the way back to Surrey on the commute back home, learning about Java and admiring the idea of a Java Conference. 
