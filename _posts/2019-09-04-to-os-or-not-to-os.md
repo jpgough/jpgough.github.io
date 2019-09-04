@@ -6,11 +6,11 @@ date: 2019-09-04
 
 ## Introduction
 Devoxx Belgium or JavaPolis is a conference I've always wanted to attend.
-I remember listening to the Java Posse Podcast on the way back to Surrey on the commute back home, learning about Java and admiring the idea of a Java Conference. 
+I remember listening to the Java Posse Podcast on the way back to Surrey on my daily commute, learning about Java and wondering what a Java conference would be like. 
 Fast forward 15 years or so and YES!!! I've been accepted to speak at Devoxx BE, finally after a few attempts in the past. 
 
 But there's a catch - contrary to the CFP on the site you have to pay to present a quickie talk and attend the conference.
-This wasn't known to me at the time and was an error on the site, otherwise I'd have looked at a different session type.
+This wasn't known to me at the time and was an error on the site, otherwise I wouldn't have selected this talk type. 
 The result is I am being asked to find €575 to give this talk and participate in the rest of the conference and I'm trying to determine if it is worth attempting to raise the funds. 
 
 I feel that the talk is an important question to ask around Java and Open Source in general to support our Ecosystem. 
