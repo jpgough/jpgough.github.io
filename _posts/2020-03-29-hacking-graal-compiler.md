@@ -4,12 +4,12 @@ title: "Hacking with the Graal Compiler for Java"
 date: 2020-03-29
 ---
 
-Earlier this month I gave a a talk a [QCon London](https://qconlondon.com) titled [How the HotSpot and Graal JVMs execute Java Code](https://qconlondon.com/london2020/presentation/hotspot-graal-jvms-execute-java-code).
+Earlier this month I gave a talk at [QCon London](https://qconlondon.com) titled [How the HotSpot and Graal JVMs execute Java Code](https://qconlondon.com/london2020/presentation/hotspot-graal-jvms-execute-java-code).
 I have re-branded this talk to have the slightly more descriptive title for the LJC "How the JVM Executes Java: Evolving Compilation with Graal".
 There is a video of this talk from the [NY Java Sig](https://youtu.be/oIcU6Emxj_s). 
 You can also find the [slides here](/assets/slide-decks/graal-compiler-java-printable.pdf).
 
-This blog posts goes into how to compile the Graal JIT and use it with the JVM. 
+This blog posts explores how to compile the Graal JIT compiler yourself and use it with a JVM installed on your machine. 
 This is based on an excellent post [Understanding How Graal Works - a Java JIT Compiler Written in Java](https://chrisseaton.com/truffleruby/jokerconf17/) written by [Chris Seaton](https://chrisseaton.com) on the subject in 2017.
 Some of the tooling has moved on, which makes it much easier to play with Graal and Graal as a JIT compiler. 
 
@@ -29,7 +29,7 @@ git clone https://github.com/oracle/graal.git
 > It includes a mechanism for specifying the dependencies as well as making it simple to build, test, run, update, etc the code and built artifacts. 
 
 We will use the `mx` tool to build and patch our build of the compiler into a running version of Java.
-We can use our `graal-dev` folder to keep our tools together, you can add mx into your shell profile if desired. 
+We can use the `graal-dev` folder to keep our tools together, you can add `mx` into your shell profile. 
 
 ```shell
 git clone https://github.com/graalvm/mx.git
@@ -38,7 +38,7 @@ export PATH=$PWD/mx:$PATH
 
 ### Building the Compiler
 
-Before we proceed we can check out if we can build the Graal Compiler.
+Now we have the source code and the `mx` tool we will check that we can build the Graal Compiler.
 
 ```shell
 cd graal/compiler/
@@ -47,8 +47,8 @@ mx build
 
 You might get an error about not being able to find a JDK e.g. **Could not find a JDK**.
 
-You fix this by specifying a Java Home either with the command or following the error to configure these for the suite.
-A suite is an mx term for a series of components, that is also a directory.
+You can fix this by specifying the location of a Java installation directory, either whilst running the `mx` command or by following the error to configure the JDK for the suite.
+A suite is an `mx` term for a series of project components, which is configured at a directory level.
 
 On my machine I simply run:
 
@@ -56,7 +56,7 @@ On my machine I simply run:
 
 ### Using Our Version of the Compiler
 
-Running `mx vm` within the folder we have just compiled in will patch the compiler into our version of java. 
+Running `mx vm` within the folder we have just compiled in will patch the JIT compiler into our version of Java. 
 For example:
 
 ```shell
@@ -67,17 +67,16 @@ OpenJDK Runtime Environment AdoptOpenJDK (build 11.0.6+10)
 OpenJDK 64-Bit Server VM AdoptOpenJDK (build 11.0.6+10, mixed mode, sharing)
 ```
 
-Let's prove this is using our compiler.
+So far we can't see any evidence that we are using the compiler that we have just built, we will now try and make an edit and apply it to running a Java application.
 
 ### Editing the Compiler
 
-For the next step we will make a very simple change to the compiler and observe the output.
 The `mx` tool also supports setup for the well known IDEs by running `mx ideinit`:
 
 `mx --java-home="/Library/Java/JavaVirtualMachines/adoptopenjdk-11.jdk/Contents/Home" ideinit`
 
-We can now open the project in Intellij. I open the project at `graal-dev/graal/compiler`.
-We can now make a simple edit in the HotSpotGraalCompiler `compileMethod(CompilationRequest request)` function.
+We can now open the project in Intellij at `graal-dev/graal/compiler` and it will pick up the settings of the project structure.
+We can make a simple edit in the HotSpotGraalCompiler `compileMethod(CompilationRequest request)` function.
 
 <p align="center">
   <img class="blog-image-terminal" src="/assets/images/blog/graal-hacking/hotspot-graal-compiler.png">
@@ -95,8 +94,8 @@ We can now recompile using `mx build` and `mx vm -version` to see it apply to ou
 
 ### Triggering JIT Compilation
 
-We also need a simple class to run this with, let's adopt a modified `HelloWorld`.
-It might be easiest to place this in graal/compiler for now, and compile it using `javac`.
+We need a simple class to run our example and observe JIT compilation, let's adopt a modified `HelloWorld`.
+It might be easiest to place this in `graal/compiler` for now, and compile it using `javac`.
 
 ```java
 public class HelloWorld {
@@ -112,7 +111,7 @@ public class HelloWorld {
 }
 ```
 
-Running this we should now see output from our compiler. 
+Running the following command we should now see output from our compiler. 
 
 ```
 mx --java-home /Library/Java/JavaVirtualMachines/adoptopenjdk-11.jdk/Contents/Home vm -XX:+UnlockExperimentalVMOptions -XX:+EnableJVMCI -XX:+UseJVMCICompiler -XX:-TieredCompilation HelloWorld 2> /dev/null 
@@ -121,13 +120,18 @@ Jim's Compiler Version Compiling: HotSpotMethod<StringLatin1.hashCode(byte[])>
 ```
 
 You will see quite a lot of output from this, this is the result of the Graal Compiler compiling itself. 
-This seems weird, but if compilation happens often it makes sense that this should also be native code.
+This seems weird, but if compilation happens often it makes sense that parts of the compiler written in Java should also be native code.
 If you want to filter the compilation to just `HelloWorld` you can also add the flag `-XX:CompileOnly=HelloWorld`.
+
+You may also be interested in how is a version of Java installed elsewhere on the machine using our Graal compiler?
+The running JVM is using the [JVMCI - JVM Compiler Interface](https://openjdk.java.net/jeps/243) to allow an alternative compiler to be used at runtime. 
+`-XX:+UnlockExperimentalVMOptions -XX:+EnableJVMCI -XX:+UseJVMCICompiler` are the flags that set this up.
 
 ### Debugging the Compiler
 
 It is also possible to debug the compiler, which can be really useful in understanding the process of JIT compilation.
-`mx -d` trigger the debugger to begin listening e.g.
+
+`mx -d` triggers the debugger to begin listening for the IDE to connect e.g.
 
 `Listening for transport dt_socket at address: 8000`
 
@@ -141,9 +145,9 @@ The `ideinit` also included a debug profile, so you can use this and add a debug
 
 IGV - [Ideal Graph Visualizer](https://www.oracle.com/downloads/graalvm-downloads.html) is an Enterprise tool from Oracle.
 The tool allows you to observe the effects that compilation phases have on the graph. 
-The install you can find at the bottom of the page (you can add this into you `graal-dev` folder).
+You can find the installation for IGV at the bottom of the page (you can add this into you `graal-dev` folder).
 You will need an account with Oracle to use this tool. 
-The too in in the bin folder, if you're on a mac you may find it easier to use `sudo spctl --master-disable` temporarily.
+The run command is the bin folder, if you're on a mac you may find it easier to use `sudo spctl --master-disable` temporarily.
 You will need to add the following flag `-Dgraal.Dump` and rerun the application. 
 
 <p align="center">
@@ -155,5 +159,5 @@ The view of the Graal Graph will then feed into IGV live.
 ### Next Steps
 
 Now you can start exploring or hacking with the Graal Compiler. 
-All of the Graal comilation tasks are organized into `*Phase`, so you can use this to take a look at any of the steps you are interested in. 
+All of the Graal compilation tasks are organized into classes named `*Phase`, so you can use this to take a look at any of the steps you are interested in. 
 
