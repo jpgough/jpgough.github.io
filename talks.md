@@ -1,6 +1,60 @@
+## 2020
+
+### QCon London
+#### How the HotSpot and Graal JVMs execute Java Code
+
+When Java was released in 1995 it was slow, a reputation it has carried for many years… 
+Today Java can give performance that is comparable to C++ and can emit instructions that are more optimal than code which is statically compiled. But how?  
+
+This talk will explore practical examples and the subsystems that are involved in interpreting, compiling and executing a simple Hello World Application. 
+We will dive into JIT compilation and the arrival of the JVM Compiler Interface (JVMCI) to explore how optimisations are applied to boost the performance of our application. 
+We will discuss HotSpot, explore Graal and the JVM ecosystem to discover performance benefits of a platform 25 years in the making.
+
+The slides for the talk can be found [here](/assets/slide-decks/graal-compiler-java-printable.pdf).
+There is also [video](https://youtu.be/oIcU6Emxj_s) given prior to the talk at the NY Java SIG when the talk was still in rough cut.
+
+### O'Reilly Software Architecture Conference - New York
+#### Building Specifying and Testing APIs with Microservices 
+
+* Create microservices using Spring Boot, which exposes an API (and prove that’s not the hard part, with options offered for non-Java developers)
+* Use either Pact or Spring Cloud Contract to test and progress the API with new features
+* Discover how to use OpenAPI to specify an API and the balance between developing APIs with specification first or contract driven
+* Use a specification to allow your API to be versioned and use semantic versioning to ensure that components in your architecture remain decoupled and free to move without breaking consumers
+* Explore the reasons for an API gateway, why they’re architecturally important, and the concepts of a service mesh in the context of developing an API program
+
+The workshop is Open Source and can be found on [GitHub](https://github.com/jpgough/api-workshop).
+
+#### API Gateways: The good, the bad and the ugly
+
+Microservices are everywhere, and when implemented properly can give significant architectural advantages. 
+However, there’s also the counter to this where concerns aren’t thought through, and the bad or even ugly side of microservices can emerge. 
+API gateways are a key architectural pattern that solve a whole range of problems, including routing and even security. 
+They can be used off the shelf without considering the various factors and features—until you find yourself in a gun-slinging outage.
+
+James Gough and Matthew Auburn outline why you should use an API gateway, the patterns you can use, and the problems it will solve for you. 
+You’ll explore technical implementation details and concerns addressed in code for building API gateways and get a glimpse of the ugly side of getting things wrong. 
+Along the way, you’ll discover why testing with gateways and microservices is key and how test containers and chaos engineering helps ensure your ecosystem works as planned and scales effectively. 
+Join in to escape the microservices Wild West.
+
+## 2019
+
+### O'Reilly Software Architecture Conference - Berlin
+#### Building Specifying and Testing APIs with Microservices 
+
+For more information see 2020.
+
+The workshop is Open Source and can be found on [GitHub](https://github.com/jpgough/api-workshop).
+
+### QCon Shanghai
+#### API Gateways: The good, the bad and the ugly
+
+For more information on the session see 2020.
+
+There is a [video](https://www.youtube.com/watch?v=SuXfTm2xVPA) of QCon Shanghai available.
+
 ## 2018
 
-### O'Reilly Software Architecture Conference
+### O'Reilly Software Architecture Conference - New York
 #### Building APIs with microservices: Things I wish I’d known
 
 Moving from a traditional monolithic architecture to microservices can be a serious challenge even before adding an API program on top of this, along with a culture shifting toward a more Agile way of working.

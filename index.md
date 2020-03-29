@@ -13,4 +13,6 @@ The book is available to purchase on [O'Reilly](http://shop.oreilly.com/product/
 read on [Safari Books](https://www.safaribooksonline.com/library/view/optimizing-java/9781492039259/) 
 or [Amazon](https://www.amazon.com/Optimizing-Java-Techniques-Application-Performance/dp/1492025798/ref=sr_1_1?ie=UTF8&qid=1526027489&sr=8-1&keywords=optimizing+java).
 
+<p align="center">
 <img src="assets/images/optimizing-cover.jpg" width="250" height="300">
+</p>
