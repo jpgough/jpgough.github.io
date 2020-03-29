@@ -11,7 +11,7 @@ You can also find the [slides here](/assets/slide-decks/graal-compiler-java-prin
 
 This blog posts explores how to compile the Graal JIT compiler yourself and use it with a JVM installed on your machine. 
 This is based on an excellent post [Understanding How Graal Works - a Java JIT Compiler Written in Java](https://chrisseaton.com/truffleruby/jokerconf17/) written by [Chris Seaton](https://chrisseaton.com) on the subject in 2017.
-Some of the tooling has moved on, which makes it much easier to play with Graal and Graal as a JIT compiler. 
+Some of the tooling has moved on, which makes it easier to play with Graal and Graal as a JIT compiler. 
 
 ### Graal Source Code
 
@@ -123,7 +123,7 @@ You will see quite a lot of output from this, this is the result of the Graal Co
 This seems weird, but if compilation happens often it makes sense that parts of the compiler written in Java should also be native code.
 If you want to filter the compilation to just `HelloWorld` you can also add the flag `-XX:CompileOnly=HelloWorld`.
 
-You may also be interested in how is a version of Java installed elsewhere on the machine using our Graal compiler?
+How is a version of Java installed elsewhere on the machine using the Graal compiler?
 The running JVM is using the [JVMCI - JVM Compiler Interface](https://openjdk.java.net/jeps/243) to allow an alternative compiler to be used at runtime. 
 `-XX:+UnlockExperimentalVMOptions -XX:+EnableJVMCI -XX:+UseJVMCICompiler` are the flags that set this up.
 
