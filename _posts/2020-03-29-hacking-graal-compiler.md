@@ -145,7 +145,7 @@ The `ideinit` also included a debug profile, so you can use this and add a debug
 
 IGV - [Ideal Graph Visualizer](https://www.oracle.com/downloads/graalvm-downloads.html) is an Enterprise tool from Oracle.
 The tool allows you to observe the effects that compilation phases have on the graph. 
-You can find the installation for IGV at the bottom of the page (you can add this into you `graal-dev` folder).
+You can find the installation for IGV at the bottom of the page (you can add this into your `graal-dev` folder).
 You will need an account with Oracle to use this tool. 
 The run command is the bin folder, if you're on a mac you may find it easier to use `sudo spctl --master-disable` temporarily.
 You will need to add the following flag `-Dgraal.Dump` and rerun the application. 
