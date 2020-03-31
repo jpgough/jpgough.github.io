@@ -8,7 +8,7 @@ Java 8s date time API and   serving on the Java Community Process Executive Comm
 I am a regular conference speaker and currently focus on building customer facing technology at Morgan Stanley. 
 I spent four years teaching Java and C++ in various countries around the world.
 
-Working with [Ben Evans](https://twitter.com/kittylyst) and [Chris Newland](https://www.chrisnewland.com) I have just completed work on a book titled Optimizing Java. 
+Working with [Ben Evans](https://twitter.com/kittylyst) and [Chris Newland](https://www.chrisnewland.com) I c-authored a book titled Optimizing Java. 
 The book is available to purchase on [O'Reilly](http://shop.oreilly.com/product/0636920042983.do), 
 read on [Safari Books](https://www.safaribooksonline.com/library/view/optimizing-java/9781492039259/) 
 or [Amazon](https://www.amazon.com/Optimizing-Java-Techniques-Application-Performance/dp/1492025798/ref=sr_1_1?ie=UTF8&qid=1526027489&sr=8-1&keywords=optimizing+java).
