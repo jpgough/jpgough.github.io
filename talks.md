@@ -87,6 +87,13 @@ This was similar to the talk given at the LJC in 2017.
 The slides can be found [here](/assets/slide-decks/optimizing-java.pdf) and an accompanying blog post can be found [here](/blog/2018/05/11/optimizing-java).
 
 
+### New York Java SIG
+#### Evolution not Revolution - the Java 9 view of memory & how we got here
+
+Great artists steal. Great programming languages steal from each other. 
+In this talk, Ben and Jim will explain the state of the art of the Java Memory Model - taking in such topics as Unsafe, method and var handles and how C++ and Java keep each other on their toes.
+
+
 ### Docklands LJC
 #### Sidecar Lightning Talk
 
