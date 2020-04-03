@@ -36,6 +36,8 @@ You’ll explore technical implementation details and concerns addressed in code
 Along the way, you’ll discover why testing with gateways and microservices is key and how test containers and chaos engineering helps ensure your ecosystem works as planned and scales effectively. 
 Join in to escape the microservices Wild West.
 
+A [video](https://learning.oreilly.com/videos/oreilly-software-architecture/0636920333777/0636920333777-video329463) is available via the O'Reilly platform. 
+
 ## 2019
 
 ### O'Reilly Software Architecture Conference - Berlin
