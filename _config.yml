@@ -1,5 +1,5 @@
 theme: jekyll-theme-slate
 title: James Gough
-description: Java Developer, Java Champion, Architect, Speaker and Author
+description: Java Champion, Architect, Speaker and Author
 
 permalink: /blog/:year/:month/:day/:title
