@@ -130,7 +130,7 @@ benchmark as accurate as possible.
 It is impossible to gain a good microbenchmarking result, so we will discuss some of the outputs from JMH and how 
 they should be reasoned to attempt to avoid a poor assumption.
 
-The video of this session is available [here](https://docklandsljc.uk/2016/06/hotspot-hood-microbenchmarking-java.html)
+The video of this session is available [here](https://www.youtube.com/watch?v=Sdara8XLEfc)
 
 ## 2014 
 
