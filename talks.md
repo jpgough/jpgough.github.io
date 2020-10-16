@@ -11,7 +11,7 @@ We will dive into JIT compilation and the arrival of the JVM Compiler Interface 
 We will discuss HotSpot, explore Graal and the JVM ecosystem to discover performance benefits of a platform 25 years in the making.
 
 The slides for the talk can be found [here](/assets/slide-decks/graal-compiler-java-printable.pdf).
-There is also [video](https://youtu.be/oIcU6Emxj_s) given prior to the talk at the NY Java SIG when the talk was still in rough cut.
+There is also [video/audio](https://www.infoq.com/presentations/hotspot-graalvm-code-execution) available from the QCon event hosted on InfoQ. 
 
 ### O'Reilly Software Architecture Conference - New York
 #### Building Specifying and Testing APIs with Microservices 
