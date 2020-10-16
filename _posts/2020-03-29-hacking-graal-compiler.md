@@ -78,9 +78,7 @@ The `mx` tool also supports setup for the well known IDEs by running `mx ideinit
 We can now open the project in Intellij at `graal-dev/graal/compiler` and it will pick up the settings of the project structure.
 We can make a simple edit in the HotSpotGraalCompiler `compileMethod(CompilationRequest request)` function.
 
-<p align="center">
-  <img class="blog-image-terminal" src="/assets/images/blog/graal-hacking/hotspot-graal-compiler.png">
-</p>
+![Hotspot Graal Compiler](/assets/images/blog/graal-hacking/hotspot-graal-compiler.png)
 
 ```java
  @Override
@@ -137,9 +135,7 @@ It is also possible to debug the compiler, which can be really useful in underst
 
 The `ideinit` also included a debug profile, so you can use this and add a debug into the `HotSpotGraalCompiler` class and start debugging. 
 
-<p align="center">
-  <img class="blog-image-terminal" src="/assets/images/blog/graal-hacking/debug.png">
-</p>
+![Debug](/assets/images/blog/graal-hacking/debug.png)
 
 ### Installing and Using IGV
 
@@ -150,9 +146,7 @@ You will need an account with Oracle to use this tool.
 The run command is the bin folder, if you're on a mac you may find it easier to use `sudo spctl --master-disable` temporarily.
 You will need to add the following flag `-Dgraal.Dump` and rerun the application. 
 
-<p align="center">
-  <img class="blog-image-terminal" src="/assets/images/blog/graal-hacking/igv.png">
-</p>
+![Ideal Graph Visualizer](/assets/images/blog/graal-hacking/igv.png)
 
 The view of the Graal Graph will then feed into IGV live. 
 
