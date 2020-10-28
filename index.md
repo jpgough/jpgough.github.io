@@ -1,5 +1,3 @@
-## Welcome 
-
 Jim is an engineer at heart and often tinkers and explores the Java ecosystem. 
 Jim enjoys working with the Java Community and has represented the London Java Community on the JCP Executive Committee. 
 Jim is a published author of [Optimizing Java](https://www.oreilly.com/library/view/optimizing-java/9781492039259/) and was recently awarded the [Java Champion](https://apexapps.oracle.com/pls/apex/f?p=119297:gb:::::p10_first%2cp10_last:james%2cgough) title. 
