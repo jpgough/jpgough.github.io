@@ -11,4 +11,5 @@ He regularly guest lectures at the University of Warwick.
 
 <p align="center">
 <img src="assets/images/optimizing-cover.jpg" width="250" height="300">
+<img src="assets/images/mastering-ea-cover.png" width="230" height="300">
 </p>
