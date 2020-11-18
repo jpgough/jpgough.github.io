@@ -46,3 +46,5 @@ I do think it's a missed opportunity for innovation and making subsystems in the
 Any enhancements and improvements to C2 are of course welcome, and this is still bedrock of the OpenJDK.
 My main motivation for this post is to make this decision more visible to developers who have enjoyed watching my talk on the potential future of the JVM. 
 I would also be really interested to see if there is community motivation to keep this going in other builds of OpenJDK. 
+
+There is also a discussion thread for this on [reddit](https://www.reddit.com/r/java/comments/jlkkz3/disable_aot_and_graal_in_oracle_openjdk/gas85j7/?utm_source=reddit&utm_medium=web2x&context=3).
