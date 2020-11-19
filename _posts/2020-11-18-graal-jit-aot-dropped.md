@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Support for GraalVM AOT and JIT in Oracle OpenJDK to be Dropped"
+title: "Support for GraalVM AOT and JIT in OpenJDK to be Dropped"
 date: 2020-11-18
 ---
 
